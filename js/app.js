@@ -1,8 +1,11 @@
+//PALINDROMO//
+
 let parola = prompt('Inserisci una parola: ')
 
 if (palindromo(parola)) {
     console.log('La parola è palindroma')
 }
+
 
 function palindromo(w) {    //w - word
     let array = w.split('')
@@ -31,5 +34,46 @@ function palindromo(w) {    //w - word
     }
 }
 
-//let lettera = parola.charAt(0)
-//let array = parola.split('')
+
+//PARI DISPARI//
+
+let pariDispari = 'null'
+
+while (pariDispari.charAt(0) != 'p' && pariDispari.charAt(0) != 'd'){
+    pariDispari = prompt('Digita PARI o DISPARI: ')
+}
+//console.log(pariDispari, pariDispari.charAt(0))
+
+let numero = parseInt (prompt('Inserisci un numero: '))
+//console.log(numero)
+
+let numeroComputer = rand()
+//console.log(numeroComputer)
+
+console.log(numero, '+', numeroComputer, '=', numero+numeroComputer, numeroPari(numero+numeroComputer))
+
+if(numeroPari(numero+numeroComputer)){
+    if(pariDispari.charAt(0) == 'p'){
+        console.log('Hai vinto')
+    }
+    else {
+        console.log('Hai perso')
+    }
+}
+else {
+    if(pariDispari.charAt(0) == 'd'){
+        console.log('Hai vinto')
+    }
+    else {
+        console.log('Hai perso')
+    }
+}
+
+
+function rand() {
+    return parseInt(Math.floor(Math.random()*5+1))  //dita di una mano
+}
+
+function numeroPari(n){
+    return (n % 2 == 0)
+}
